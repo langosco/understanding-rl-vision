@@ -6,12 +6,11 @@ except KeyError:
     ON_CLUSTER = False
 
 if ON_CLUSTER:
-    checkpoint_path = '/cluster/home/dlauro/aisc2021/understanding-rl-vision/checkpoints/coinrun_aisc.jd'
+    checkpoint_path = '/cluster/home/dlauro/aisc2021/understanding-rl-vision/checkpoints/coinrun.jd'
     output_dir = '/cluster/home/dlauro/aisc2021/understanding-rl-vision/outputs/'
 else:
-    checkpoint_path = '/home/lauro/code/aisc2021/understanding-rl-vision/checkpoints/coinrun_aisc.jd'
+    checkpoint_path = '/home/lauro/code/aisc2021/understanding-rl-vision/checkpoints/coinrun.jd'
     output_dir='/tmp/'
-
 
 # script runs faster if we ignore the other layers
 layer_kwargs={

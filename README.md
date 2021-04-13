@@ -1,3 +1,17 @@
+To generate the interfaces on the modified environment (coinrun_aisc), run
+
+```
+from understanding_rl_vision import rl_clarity
+rl_clarity.run('path/to/checkpoint/file',
+				output_dir='path/to/directory',
+				load_kwargs={'coinrun_aisc': True})
+```
+You can download checkpoints from the original paper [here](https://openaipublic.blob.core.windows.net/rl-clarity/attribution/models/index.html), or use the one at `./checkpoints/coinrun.jd`, which was downloaded from https://openaipublic.blob.core.windows.net/rl-clarity/attribution/models/procgen/coinrun.jd
+
+
+Original readme:
+
+---
 **Status:** Archive (code is provided as-is, no updates expected)
 
 # Understanding RL Vision
