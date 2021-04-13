@@ -194,7 +194,12 @@ def load(
     observations_kwargs={},
     full_resolution=False,
     temp_files=False,
+    coinrun_aisc=False,
 ):
+    """
+    if coinrun_aisc is specified, then deploy on modified env where coin spawns at random
+    spot, even if the saved model config specifies a different environment.
+    """
     if temp_files:
         default_path = lambda suffix: tempfile.mkstemp(suffix=suffix)[1]
     else:
@@ -221,6 +226,13 @@ def load(
 
         checkpoint_dict = load_joblib(checkpoint_path, cache=False)
         config = checkpoint_dict["args"]
+        if coinrun_aisc:
+            config['env_name'] = 'coinrun_aisc'
+        print()
+        print("///////////////////////////////////////////")
+        print("Environment specified:", config['env_name'])
+        print("///////////////////////////////////////////")
+        print()
         if full_resolution:
             config["render_human"] = True
         if config.get("use_lstm", 0):
